@@ -8,7 +8,7 @@ def test_add_possitive():
     assert sum_two_element(1,2) == 3
     
 def test_add_zero():
-    assert sum_two_element(1,0) == 2
+    assert sum_two_element(1,0) == 1
     
 def test_add_negative():
     assert sum_two_element(4,-100)  == -96
