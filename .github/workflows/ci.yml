@@ -43,7 +43,7 @@ jobs:
       - name: Dead Code
         run:  dead --exclude tests/ 
       - name: Documentation coverage check
-        run:  interrogate -vv src
+        run:  interrogate -vv -I src
       - name: Pydocstyle
         run:  pydocstyle src/
 
