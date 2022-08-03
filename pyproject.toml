@@ -4,7 +4,6 @@ testpaths = [
     "tests",
 ]
 
-
 [bandit]
 targets = "src/"
 recursive = true
