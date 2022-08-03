@@ -33,7 +33,7 @@ jobs:
       - name: Mypy
         run:  mypy src/
       - name: Coverage
-        run:  coverage report -m src/
+        run:  coverage report -m
       - name: Safety check
         run:  safety check
          
