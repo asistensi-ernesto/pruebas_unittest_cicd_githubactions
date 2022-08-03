@@ -38,7 +38,10 @@ jobs:
         run:  safety check -r requirements.txt
       - name: Bandit check
         run:  bandit -r src
+      - name: Dead Code
+        run:  dead --exclude tests/ 
       - name: Documentation coverage check
         run:  interrogate -vv src
       - name: Pydocstyle
         run:  pydocstyle src/
+
