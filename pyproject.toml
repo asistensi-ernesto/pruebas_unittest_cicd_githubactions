@@ -3,10 +3,7 @@ addopts = "--cov=src.session"
 testpaths = [
     "tests",
 ]
-[tool.coverage.run]
-branch = true
-command_line = '-m pytest'
-source = ['src/']
+
 
 [tool.coverage.report]
 precision = 2
