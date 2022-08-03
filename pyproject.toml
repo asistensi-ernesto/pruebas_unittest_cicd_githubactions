@@ -1,4 +1,8 @@
 [tool.pytest.ini_options]
+addopts = "--cov=src.session"
+testpaths = [
+    "tests",
+]
 
 [tool.mypy]
 mypy_path = "src"
