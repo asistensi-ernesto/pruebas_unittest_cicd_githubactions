@@ -30,12 +30,8 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Pylint
         run: pylint src/
-      - name: Test with pytest
-        run:  pytest -vv
       - name: Mypy
         run:  mypy src/
-      - name: Coverage
-        run:  coverage report -m
       - name: Safety check
         run:  safety check -r requirements.txt
       - name: Bandit check
@@ -45,5 +41,8 @@ jobs:
       - name: Documentation coverage check
         run:  interrogate -vv -I src
       - name: Pydocstyle
-        run:  pydocstyle src/
-
+        run:  pydocstyle --ignore=E201,E501,D104  src/
+      - name: Test with pytest
+        run:  pytest -vv
+      - name: Coverage
+        run:  coverage report -m
