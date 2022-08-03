@@ -3,6 +3,20 @@ addopts = "--cov=src.session"
 testpaths = [
     "tests",
 ]
+[tool.coverage.run]
+branch = true
+command_line = '-m pytest'
+source = ['src/']
+
+[tool.coverage.report]
+precision = 2
+skip_covered = true
+fail_under = 90
+
+[bandit]
+targets = "src/"
+recursive = true
+skips = "B101"
 
 [tool.mypy]
 mypy_path = "src"
@@ -17,3 +31,24 @@ warn_return_any = true
 warn_unreachable = true
 warn_unused_configs = true
 no_implicit_reexport = true
+
+[tool.interrogate]
+ignore-init-method = true
+ignore-init-module = false
+ignore-magic = false
+ignore-semiprivate = false
+ignore-private = false
+ignore-property-decorators = false
+ignore-module = false
+ignore-nested-functions = false
+ignore-nested-classes = true
+ignore-setters = false
+fail-under = 50
+exclude = ["setup.py", "docs", "build"]
+ignore-regex = ["^get$", "^mock_.*", ".*BaseClass.*"]
+# possible values: 0 (minimal output), 1 (-v), 2 (-vv)
+verbose = 0
+quiet = false
+whitelist-regex = []
+color = true
+omit-covered-files = false
