@@ -39,6 +39,6 @@ jobs:
       - name: Bandit check
         run:  bandit -r src
       - name: Documentation coverage check
-        run:  interrogative -vv src
+        run:  interrogate -vv src
       - name: Pydocstyle
         run:  pydocstyle src/
