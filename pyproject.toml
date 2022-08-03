@@ -5,11 +5,6 @@ testpaths = [
 ]
 
 
-[tool.coverage.report]
-precision = 2
-skip_covered = true
-fail_under = 90
-
 [bandit]
 targets = "src/"
 recursive = true
