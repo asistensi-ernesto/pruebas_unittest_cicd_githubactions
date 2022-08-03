@@ -34,7 +34,11 @@ jobs:
         run:  mypy src/
       - name: Coverage
         run:  coverage report -m
+      - name: Pydocstyle
+        run:  pydocstyle src/
       - name: Safety check
-        run:  safety check
+        run:  safety check -r requirements.txt
       - name: Bandit check
         run:  bandit -r src
+      - name: Documentation coverage check
+        run:  interrogative -vv src
